@@ -261,7 +261,7 @@ export function NetworkCanvas({ rows, config, onSelect, exporting, width, height
           .slice()
           .sort((a, b) => b.degree - a.degree)
           .slice(0, exporting ? 26 : 18);
-        ctx.font = '500 10.5px Inter, system-ui, sans-serif';
+        ctx.font = '500 10.5px ui-sans-serif, system-ui, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
         for (const n of top) {

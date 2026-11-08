@@ -239,7 +239,7 @@ export function GalaxyCanvas({ rows, config, onSelect, selectedRow, exporting, w
       /* ---------- labels ---------- */
       if (config.showLabels && !isSmall) {
         const showAll = nodes.length <= 90;
-        ctx.font = '500 11px Inter, system-ui, sans-serif';
+        ctx.font = '500 11px ui-sans-serif, system-ui, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'top';
         const drawn: Array<[number, number]> = [];

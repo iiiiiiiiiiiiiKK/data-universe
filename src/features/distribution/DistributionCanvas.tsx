@@ -106,7 +106,7 @@ export function DistributionCanvas({ rows, config, onSelect, exporting, width, h
     hitRef.current = [];
 
     const axisText = isDark ? 'rgba(160,175,205,0.78)' : 'rgba(70,80,105,0.82)';
-    ctx.font = '10px Inter, system-ui, sans-serif';
+    ctx.font = '10px ui-sans-serif, system-ui, sans-serif';
     ctx.fillStyle = axisText;
 
     /* ---------------- histogram / density ---------------- */
@@ -352,14 +352,14 @@ export function DistributionCanvas({ rows, config, onSelect, exporting, width, h
       ctx.fillStyle = isDark ? 'rgba(228,236,255,0.95)' : 'rgba(24,30,50,0.92)';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.font = '600 15px Inter, system-ui, sans-serif';
+      ctx.font = '600 15px ui-sans-serif, system-ui, sans-serif';
       ctx.fillText(formatNumber(total, 0), cx, cy - 7);
-      ctx.font = '10px Inter, system-ui, sans-serif';
+      ctx.font = '10px ui-sans-serif, system-ui, sans-serif';
       ctx.fillStyle = axisText;
       ctx.fillText(locale === 'zh' ? '记录数' : 'records', cx, cy + 10);
 
       // Legend
-      ctx.font = '10px Inter, system-ui, sans-serif';
+      ctx.font = '10px ui-sans-serif, system-ui, sans-serif';
       ctx.textAlign = 'left';
       const legendX = w - (w < 480 ? 96 : 150);
       let legendY = padT + 6;

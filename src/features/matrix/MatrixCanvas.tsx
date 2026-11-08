@@ -93,7 +93,7 @@ export function MatrixCanvas({ rows, config, exporting, width, height }: Props) 
     ctx.fillStyle = isDark ? '#04060f' : '#f8fafd';
     ctx.fillRect(0, 0, w, h);
 
-    ctx.font = '10px Inter, system-ui, sans-serif';
+    ctx.font = '10px ui-sans-serif, system-ui, sans-serif';
 
     if (isCorrelation && corr) {
       const labels = corr.fields.map((f) => (f.length > 16 ? `${f.slice(0, 15)}…` : f));

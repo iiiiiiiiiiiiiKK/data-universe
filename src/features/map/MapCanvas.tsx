@@ -231,7 +231,7 @@ export function MapCanvas({ rows, config, onSelect, exporting, width, height }: 
         .slice()
         .sort((a, b) => (b.p.value ?? 0) - (a.p.value ?? 0))
         .slice(0, exporting ? 14 : 10);
-      ctx.font = '500 10px Inter, system-ui, sans-serif';
+      ctx.font = '500 10px ui-sans-serif, system-ui, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
       for (const t of top) {

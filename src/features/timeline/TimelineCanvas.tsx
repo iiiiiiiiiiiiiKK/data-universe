@@ -122,7 +122,7 @@ export function TimelineCanvas({ rows, config, onSelect, exporting, width, heigh
       ctx.stroke();
       const v = valueMax - ((valueMax - valueMin) * i) / rows4;
       ctx.fillStyle = isDark ? 'rgba(160,175,205,0.72)' : 'rgba(60,70,95,0.72)';
-      ctx.font = '10px Inter, system-ui, sans-serif';
+      ctx.font = '10px ui-sans-serif, system-ui, sans-serif';
       ctx.textAlign = 'right';
       ctx.textBaseline = 'middle';
       ctx.fillText(model.hasValue ? formatNumber(v, 1) : '', padL - 8, y);
@@ -200,7 +200,7 @@ export function TimelineCanvas({ rows, config, onSelect, exporting, width, heigh
 
     /* -------- legend -------- */
     if (categories.length > 1 && categories.length <= 8) {
-      ctx.font = '10px Inter, system-ui, sans-serif';
+      ctx.font = '10px ui-sans-serif, system-ui, sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
       let lx = padL;
