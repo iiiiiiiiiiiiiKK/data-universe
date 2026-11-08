@@ -262,17 +262,19 @@ npx playwright test    # Playwright 端到端测试（需本机 Chrome）
 ### 测试
 
 ```bash
-npm run test        # 85 个单元测试
-npx playwright test # 22 个端到端用例（桌面 + 移动）
-npm run typecheck   # 0 错误
-npm run lint        # 0 error / 0 warning
-npm run build       # 构建成功
+npm run test                                    # 85 个单元测试
+npx playwright test                             # 32 个端到端用例（桌面 1440×900 + Pixel 7）
+npx playwright test -c playwright.production.config.ts  # 7 个线上验收用例（真实 GitHub Pages URL）
+npm run typecheck                               # 0 错误
+npm run lint                                    # 0 error / 0 warning
+npm run build                                   # 构建成功
 ```
 
 覆盖范围：
 
 - **单元测试**：分隔符检测、BOM、中文表头、重复列名、空字段、列数不一致、空文件、JSON 数组/嵌套/单对象/非法 JSON、类型推断（整数/小数/日期/日期时间/布尔/类别/文本/经纬度）、统计量、IQR 离群值、类别统计、地理字段检测、筛选器全类型、星系布局确定性、采样、网络边构建、时间线、矩阵聚合、Pearson/Spearman、直方图、箱线图
-- **端到端**：首页渲染与作者 X 链接、中英文切换、深浅色切换、CSV 上传 → 数据理解 → 生成宇宙、六模式切换、示例数据生成、保存作品 → 作品库列表、导出对话框四格式、空 CSV 报错、非法 JSON 报错、移动端无横向溢出、移动端模式切换可用
+- **端到端（32 例，桌面 + 移动各跑一遍）**：首页渲染与作者 X 链接、中英文切换、深浅色切换、CSV 上传 → 数据理解 → 生成宇宙、六模式切换、示例数据生成、保存作品 → 作品库列表、导出对话框四格式、空 CSV 报错、非法 JSON 报错、移动端无横向溢出、移动端模式切换可用、XLSX（中文表头）、JSON 数组、TSV、嵌套 JSON 展开
+- **线上验收（7 例，直接访问生产 URL）**：首页零控制台错误、CSS/JS/favicon/世界底图全部可解析、完整用户流程（上传 → 理解 → 星系 → 保存 → 作品库）、导出四格式、JSON 导出真实下载并校验内容、地图底图在部署子路径下加载成功、移动端无横向溢出
 
 ### 已知问题与限制
 
@@ -394,8 +396,9 @@ npm run dev
 npm run build       # production build → dist/
 npm run typecheck   # TypeScript
 npm run lint        # ESLint
-npm run test        # Vitest
-npx playwright test # Playwright E2E (local Chrome required)
+npm run test        # Vitest (85 unit tests)
+npx playwright test # Playwright E2E (32 cases, local Chrome required)
+npx playwright test -c playwright.production.config.ts  # 7 live-site checks
 ```
 
 ### Deployment
