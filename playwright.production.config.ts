@@ -11,7 +11,9 @@ export default defineConfig({
   expect: { timeout: 20_000 },
   fullyParallel: false,
   workers: 1,
-  retries: 1,
+  // One retry absorbs transient CDN/TLS hiccups on a public URL, but the
+  // assertions themselves must be deterministic on the second attempt.
+  retries: 2,
   reporter: [['list']],
   use: {
     ...devices['Desktop Chrome'],

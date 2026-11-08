@@ -191,7 +191,7 @@ src/
 | 可清除本地作品 | 作品库提供删除；`IndexedDB` 可整体清理 |
 | 可完整导出 | JSON 导出包含完整数据与配置 |
 
-**唯一的外部网络请求**：Google Fonts（字体）。若需完全离线，可自行移除 `index.html` 中的字体 `<link>`，回退到系统字体栈。
+**本项目不发起任何外部网络请求。** 字体使用系统字体栈（含 PingFang SC / Microsoft YaHei 等中文回退），无第三方 CDN、无字体服务、无分析脚本。断网环境下功能完全正常。
 
 ### 本地运行
 
@@ -286,8 +286,8 @@ npm run build       # 构建成功
 
 ### 已知的环境注意事项
 
-- Google Fonts 需联网加载，离线环境会回退到系统字体，不影响功能
 - 首次加载 XLSX 相关功能时会懒加载 SheetJS（约 143 KB gzip）
+- 完全离线可用：应用不包含任何外部网络请求
 - IndexedDB 在浏览器隐私模式/无痕窗口下可能受限，此时保存会失败并给出明确提示
 
 ### License
@@ -379,7 +379,7 @@ Sampling uses a fixed stride, and layouts are driven by a seeded `mulberry32` PR
 
 No backend, no analytics, no telemetry, no third-party API calls. Parsing runs in memory via `FileReader`. `.gitignore` excludes all local data and build output. Universes can be deleted from the library and exported in full as JSON.
 
-**The only external request** is Google Fonts. Remove the font `<link>` in `index.html` for a fully offline build.
+**The app makes no external network requests at all.** Fonts come from system stacks (with CJK fallbacks such as PingFang SC and Microsoft YaHei). No third-party CDN, no font service, no analytics. It works fully offline.
 
 ### Getting started
 
